@@ -29,9 +29,6 @@ function createGrid(size) {
         //   cell.style.backgroundColor = "";
         // }, 500);
       });
-      cell.addEventListener("click", () => {
-        cell.style.backgroundColor = "#000fff";
-      });
       gridContainer.appendChild(cell);
     }
   }
