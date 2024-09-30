@@ -6,6 +6,11 @@ const resetBtn = document.querySelector("#reset-btn");
 resetBtn.addEventListener("click", () => {
   const newSize = prompt("Enter size for new grid (max 100): ");
   const size = Math.min(Math.max(parseInt(newSize), 1), 100);
+
+  if (isNaN(size) || size <= 0) {
+    alert("Please enter a valid number");
+  }
+
   createGrid(size);
 });
 
