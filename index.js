@@ -18,7 +18,7 @@ function createGrid(size) {
   gridContainer.innerHTML = "";
 
   for (let i = 0; i < size; i++) {
-    console.log(i);
+    // console.log(i);
     for (let j = 0; j < size; j++) {
       const cell = document.createElement("div");
       cell.style.width = `calc(100% / ${size})`;
@@ -29,11 +29,15 @@ function createGrid(size) {
         cell.style.backgroundColor = "#000";
       });
       cell.addEventListener("mouseout", () => {
-        cell.style.backgroundColor = "#00f";
-        // setTimeout(() => {
-        //   cell.style.backgroundColor = "";
-        // }, 500);
+        cell.style.backgroundColor = getRandColor();
       });
+
+      function getRandColor() {
+        let r = Math.floor(Math.random() * 256);
+        let g = Math.floor(Math.random() * 256);
+        let b = Math.floor(Math.random() * 256);
+        return `rgb(${r}, ${g}, ${b})`;
+      }
       gridContainer.appendChild(cell);
     }
   }
